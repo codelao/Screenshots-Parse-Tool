@@ -1,3 +1,15 @@
+# 0.8.6-beta
+*2023-06-04*
+
+### Added
+- "Screenshots" folder now creates automatically
+- "Terms of use" popup icon 
+- *spt.sh* and *spt.bat* scripts for easier app installation and running
+### Fixed
+- UI bug on Windows
+- *"Unable to open database file"* error
+
+
 # 0.8.5-beta
 *2023-06-01*
 

@@ -21,7 +21,7 @@ def parser(path):
     parser = etree.HTMLParser()
     read = etree.fromstring(get_link, parser)
     find_screenshot_link = read.find('.//img[@id="screenshot-image"]')
-    return find_screenshot_link.get('src') # return screenshot link from the 'src' atribute
+    return find_screenshot_link.get('src')
 
 def downloader():
     path = path_generator()
@@ -33,12 +33,18 @@ def downloader():
             today = datetime.datetime.today()
             date = today.strftime("%m_%d_%Y")
             filename = path + '.png'
-            if os.path.isdir('Screenshots/' + date) == True:
-                with open('Screenshots/' + date + '/' + filename, 'wb') as f:
-                    f.write(get_screenshot_link.content)
-                    f.close()
+            if os.path.isdir('Screenshots') == True:
+                if os.path.isdir('Screenshots/' + date) == True:
+                    with open('Screenshots/' + date + '/' + filename, 'wb') as f:
+                        f.write(get_screenshot_link.content)
+                        f.close()
+                else:
+                    os.mkdir('Screenshots/' + date)
+                    with open('Screenshots/' + date + '/' + filename, 'wb') as f:
+                        f.write(get_screenshot_link.content)
+                        f.close()
             else:
-                os.mkdir('Screenshots/' + date) # create new directory with date in the title
+                os.mkdir('Screenshots') and os.mkdir('Screenshots/' + date)
                 with open('Screenshots/' + date + '/' + filename, 'wb') as f:
                     f.write(get_screenshot_link.content)
                     f.close()

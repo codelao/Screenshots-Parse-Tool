@@ -1,18 +1,8 @@
-#                         ╭━━━┳━━━┳━━━━╮
-#                         ┃╭━╮┃╭━╮┃╭╮╭╮┃
-#                         ┃╰━━┫╰━╯┣╯┃┃╰╯
-#                         ╰━━╮┃╭━━╯ ┃┃
-#                         ┃╰━╯┃┃    ┃┃
-#                         ╰━━━┻╯    ╰╯
-#
-#                            by Lao
-#                      Licensed under MIT
-
 import sys
 import subprocess
 import webbrowser
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
-from PyQt6.QtGui import QFontDatabase, QIcon
+from PyQt6.QtGui import QFontDatabase, QPixmap
 from start_parser import StartParserWindow
 from dbase import Database
 
@@ -74,7 +64,7 @@ class MainWindow(QMainWindow):
     def terms(self):
         self.terms_popup = QMessageBox(self)
         self.terms_popup.setWindowTitle('Terms of use')
-        self.terms_popup.setWindowIcon(QIcon('app/logo.png'))
+        self.terms_popup.setIconPixmap(QPixmap('app/logo.png'))
         self.terms_popup.move(400, 300)
         self.terms_popup.setIcon(QMessageBox.Icon.Warning)
         self.terms_popup.setText('DISCLAIMER')
