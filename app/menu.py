@@ -5,6 +5,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt6.QtGui import QFontDatabase, QPixmap
 from start_parser import StartParserWindow
 from dbase import Database
+from check_internet import check_internet_connection
 
 
 class MainWindow(QMainWindow):
@@ -25,6 +26,7 @@ class MainWindow(QMainWindow):
             from main_light import Ui_MainWindow
             self.UI = Ui_MainWindow()
             self.UI.setupUi(self)
+        QFontDatabase.addApplicationFont('app/fonts/Rubik.ttf')
         self.connections()
 
     def connections(self):
@@ -36,8 +38,19 @@ class MainWindow(QMainWindow):
     def start_parser(self):
         if not self.db.check_terms() == None:
             if self.db.check_terms()[0] == 'agree':
-                self.parser = StartParserWindow(self)
-                self.parser.show()
+                if check_internet_connection() == True:
+                    self.parser = StartParserWindow(self)
+                    self.parser.show()
+                else:
+                    self.internet_error = QMessageBox(self)
+                    self.internet_error.setWindowTitle('Internet error')
+                    self.internet_error.setIconPixmap(QPixmap('app_images/logo.png'))
+                    self.internet_error.move(400, 300)
+                    self.internet_error.setIcon(QMessageBox.Icon.Warning)
+                    self.internet_error.setText('Check your internet connection and try again.')
+                    self.okButton = self.internet_error.setDefaultButton(QMessageBox.StandardButton.Ok)
+                    self.internet_error.setDefaultButton(self.okButton)
+                    self.internet_error.exec()
             else:
                 self.terms()
         else:
@@ -64,7 +77,7 @@ class MainWindow(QMainWindow):
     def terms(self):
         self.terms_popup = QMessageBox(self)
         self.terms_popup.setWindowTitle('Terms of use')
-        self.terms_popup.setIconPixmap(QPixmap('app/logo.png'))
+        self.terms_popup.setIconPixmap(QPixmap('app_images/logo.png'))
         self.terms_popup.move(400, 300)
         self.terms_popup.setIcon(QMessageBox.Icon.Warning)
         self.terms_popup.setText('DISCLAIMER')
@@ -81,7 +94,6 @@ class MainWindow(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    QFontDatabase.addApplicationFont('app/fonts/Rubik-Italic.ttf')
     mw = MainWindow()
     mw.show()
     sys.exit(app.exec())

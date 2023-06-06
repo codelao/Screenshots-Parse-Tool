@@ -9,7 +9,13 @@ rem
 rem                            by Lao
 rem                      Licensed under MIT
 
-pip3 install PyQt6 requests lxml
+python3 --version
+if %ERRORLEVEL% == 0 (
+    pip3 install PyQt6 requests lxml
+) else (
+    color 04
+    echo App requires Python3 to be installed in your system first.
+)
+
 cls
 python3 app/menu.py
-exit

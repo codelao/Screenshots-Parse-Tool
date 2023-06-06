@@ -44,7 +44,8 @@ def downloader():
                         f.write(get_screenshot_link.content)
                         f.close()
             else:
-                os.mkdir('Screenshots') and os.mkdir('Screenshots/' + date)
+                os.mkdir('Screenshots')
+                os.mkdir('Screenshots/' + date)
                 with open('Screenshots/' + date + '/' + filename, 'wb') as f:
                     f.write(get_screenshot_link.content)
                     f.close()

@@ -1,3 +1,11 @@
+# 0.9.6
+*2023-06-06*
+
+### Added internet connection check
+### Small improvements
+### Bug fixes
+
+
 # 0.8.6-beta
 *2023-06-04*
 
