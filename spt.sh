@@ -13,7 +13,6 @@ if ! python3 --version; then
     echo -e "\033[31mApp requires Python3 to be installed in your system first.\033[0m"
 else
     pip3 install PyQt6 requests lxml
+    clear
+    python3 app/menu.py
 fi
-
-clear
-python3 app/menu.py
