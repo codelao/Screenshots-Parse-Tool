@@ -1,3 +1,16 @@
+# 0.10.5
+*2023-07-10*
+
+### Minor improvements and bug fixes
+### Added
+- Statistics
+- Builds for macOS, Linux, Windows
+- Menu bar
+### Changed
+- Configure scripts
+- *ParsedScreens* folder path (now it will be created on Desktop)
+
+
 # 0.9.6
 *2023-06-06*
 

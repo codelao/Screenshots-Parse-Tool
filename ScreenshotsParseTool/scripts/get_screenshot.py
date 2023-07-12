@@ -30,23 +30,24 @@ def downloader():
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246'}
         get_screenshot_link = requests.get(screenshot_link, headers=headers)
         if not get_screenshot_link.status_code == 404:
+            desktop_path = os.path.join(os.path.expanduser('~'), 'Desktop')
             today = datetime.datetime.today()
             date = today.strftime("%m_%d_%Y")
             filename = path + '.png'
-            if os.path.isdir('Screenshots') == True:
-                if os.path.isdir('Screenshots/' + date) == True:
-                    with open('Screenshots/' + date + '/' + filename, 'wb') as f:
+            if os.path.isdir(desktop_path + '/ParsedScreens') == True:
+                if os.path.isdir(desktop_path + '/ParsedScreens/' + date) == True:
+                    with open(desktop_path + '/ParsedScreens/' + date + '/' + filename, 'wb') as f:
                         f.write(get_screenshot_link.content)
                         f.close()
                 else:
-                    os.mkdir('Screenshots/' + date)
-                    with open('Screenshots/' + date + '/' + filename, 'wb') as f:
+                    os.mkdir(desktop_path + '/ParsedScreens/' + date)
+                    with open(desktop_path + '/ParsedScreens/' + date + '/' + filename, 'wb') as f:
                         f.write(get_screenshot_link.content)
                         f.close()
             else:
-                os.mkdir('Screenshots')
-                os.mkdir('Screenshots/' + date)
-                with open('Screenshots/' + date + '/' + filename, 'wb') as f:
+                os.mkdir(desktop_path + '/ParsedScreens')
+                os.mkdir(desktop_path + '/ParsedScreens/' + date)
+                with open(desktop_path + '/ParsedScreens/' + date + '/' + filename, 'wb') as f:
                     f.write(get_screenshot_link.content)
                     f.close()
         else:
