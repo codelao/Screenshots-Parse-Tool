@@ -8,7 +8,7 @@
 
 * [Usage](#usage)
 * [Installation](#installation)
-* [Popular errors](*popular-errors)
+* [Popular errors](#popular-errors)
 
 
 ### Themes:
@@ -35,14 +35,14 @@ This "vulnerability" can show stranger's screenshots, so SPT generates unique li
 ```
 git clone https://github.com/codelao/Screenshots-Parse-Tool.git
 cd Screenshots-Parse-Tool
-bash spt.sh
+bash configure.sh
 ```
 
 ### Windows
 ```
 git clone https://github.com/codelao/Screenshots-Parse-Tool.git
 cd Screenshots-Parse-Tool
-spt.bat
+configure
 ```
 
 
