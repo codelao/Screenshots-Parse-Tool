@@ -1,3 +1,13 @@
+# 0.11.5
+*2023-07-17*
+
+- New UI (now should work good on Windows :0)
+- General improvements
+### Fixed
+- Statistics not changing
+- Critical database error
+
+
 # 0.10.5
 *2023-07-10*
 

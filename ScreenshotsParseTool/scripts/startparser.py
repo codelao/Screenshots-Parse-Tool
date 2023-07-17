@@ -1,8 +1,9 @@
 import os
 import datetime
 from PyQt6.QtWidgets import QDialog, QApplication, QMessageBox
-from PyQt6.QtGui import QPixmap
+from PyQt6.QtGui import QPixmap, QFontDatabase
 from dbase import Database
+from ui_startparser import Ui_Dialog
 from get_screenshot import downloader
 
 
@@ -13,27 +14,25 @@ class StartParserWindow(QDialog):
         self.path = os.path.abspath(os.path.join(self.current_dir, os.pardir))
         self.db = Database(self.path + '/database/spt_db.db')
         self.theme = self.db.check_theme()
-        if not self.theme == None:
-            if self.theme[0] == 'light':
-                from start_light import Ui_Dialog
-                self.UI = Ui_Dialog()
-                self.UI.setupUi(self)
-            else:
-                from start_dark import Ui_Dialog
-                self.UI = Ui_Dialog()
-                self.UI.setupUi(self)
+        self.UI = Ui_Dialog()
+        self.UI.setupUi(self)
+        if self.theme == None or self.theme[0] == 'light':
+            self.setStyleSheet('QDialog {\n'
+            'background-color: white;\n'
+            '}')
         else:
-            from start_light import Ui_Dialog
-            self.UI = Ui_Dialog()
-            self.UI.setupUi(self)
+            self.setStyleSheet('QDialog {\n'
+            'background-color: #330230;\n'
+            '}')
+        QFontDatabase.addApplicationFont(self.path + '/fonts/Rubik.ttf')
         self.connections()
         self.parent = parent
 
     def connections(self):
-        self.UI.pushButton.clicked.connect(self.run)
-        self.UI.pushButton_2.clicked.connect(self.back)
+        self.UI.button1.clicked.connect(self.launch)
+        self.UI.button2.clicked.connect(self.back)
 
-    def run(self):
+    def launch(self):
         self.screens_count = self.UI.spinBox.value()
         self.UI.progressBar.setMinimum(0)
         self.UI.progressBar.setMaximum(self.screens_count)
@@ -47,7 +46,8 @@ class StartParserWindow(QDialog):
         self.finish_popup.move(400, 300)
         self.finish_popup.setIcon(QMessageBox.Icon.Information)
         self.finish_popup.setText('Screenshots (' + str(self.screens_count) + ') successfully parsed!')
-        self.okButton = self.finish_popup.setDefaultButton(QMessageBox.StandardButton.Ok)
+        self.okButton = self.finish_popup.addButton(QMessageBox.StandardButton.Ok)
+        self.finish_popup.setDefaultButton(self.okButton)
         self.finish_popup.exec()
         if self.finish_popup.clickedButton() == self.okButton:
             self.count = self.db.get_screens_count()[0]

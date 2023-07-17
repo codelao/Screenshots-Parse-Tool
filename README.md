@@ -26,23 +26,26 @@
 
 
 ## Usage
-SPT (Screenshots Parse Tool) exploits the "vulnerability" in the app "Lightshot" which is made for taking screenshots.
-This "vulnerability" can show stranger's screenshots, so SPT generates unique links to this screenshots and then saves them to the auto-created directory on your Desktop. You can see how it looks [here](#directories). 
+SPT (Screenshots Parse Tool) exploits the "vulnerability" in the app, called "Lightshot" which is made for taking screenshots. This app is pretty popular and that's why it has over 4 billion stranger's screenshots saved.
+This "vulnerability" can show this screenshots, so SPT generates unique links to this screenshots, parses them and after saves them to the auto-created directory on your Desktop. You can see how it looks [here](#directories). 
 
 #### Important! 
-"Lightshot" developers added the function of accessing to other user's screenshots on their website themselves, so SPT doesn't exploit any prohibited vulnerabilities.
+**"Lightshot" developers added the function of accessing to other user's screenshots on their website themselves, so SPT doesn't exploit any prohibited vulnerabilities.**
 
 
 ## Installation
-### MacOS/Linux
+### macOS/Linux
 ```
 git clone https://github.com/codelao/Screenshots-Parse-Tool.git
 cd Screenshots-Parse-Tool
-bash configure.sh
+chmod +x configure.sh
+./configure.sh
 ```
 
 ### Windows
+<b>On Windows you need to <u>run cmd as administrator</u>, otherwise you won't be able to correctly configure SPT.</b>
 ```
+cd %userprofile%
 git clone https://github.com/codelao/Screenshots-Parse-Tool.git
 cd Screenshots-Parse-Tool
 configure
@@ -53,24 +56,28 @@ configure
 ### Configuration errors:
 - *! Error moving SPT to /usr/local/bin*
 - *! Error moving SPT to /usr/local/share*
-- *! Error moving SPT to .\ProgramData*
 
 **This errors may occure because you don't have enough rights to move SPT files to this directories.**
 
-### Application errors:
+- *! Error moving SPT to C:\Windows\System32*
+
+**This error may occure because you didn't run *cmd* as administrator before starting to install SPT.**
+
+### Program errors:
 - *Check your internet connection or disable VPN.*
 
 **This error may occure not only because you don't have internet connection or VPN enabled, but also because your internet connection is too slow.**
 
 ### System errors:
-- App doesn't work after launching it
+- *! Startup error*
+- Program doesn't work after startup
 
 **This error may occure because you have moved some SPT files to other directories.**
-**You should move them back or clone this repository and launch configure script again.**
+**You should move them back or clone this repository and run configure script again.**
 
-- App crashes during parsing
+- Program crashes during parsing
 
 **This error may occure because your internet connection is too slow.**
 
 #### Important!
-**Connecting your computer to the mobile internet can also cause problems with the app.**
+**Connecting your computer to the mobile internet can also cause problems with the program.**
