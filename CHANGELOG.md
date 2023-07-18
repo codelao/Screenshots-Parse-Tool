@@ -1,3 +1,9 @@
+# 0.11.6
+*2023-07-18*
+
+### Minor improvements and fixed bug with statistics
+
+
 # 0.11.5
 *2023-07-17*
 

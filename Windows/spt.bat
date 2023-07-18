@@ -5,5 +5,5 @@ if %ERRORLEVEL% == 0 (
     exit 0
 ) else (
     cls
-    echo ! Startup error
+    echo ! Process or startup error
 )

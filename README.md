@@ -41,6 +41,10 @@ cd Screenshots-Parse-Tool
 chmod +x configure.sh
 ./configure.sh
 ```
+Finally, now you can run SPT from any directory using this command in terminal:
+```
+spt
+```
 
 ### Windows
 <b>On Windows you need to <u>run cmd as administrator</u>, otherwise you won't be able to correctly configure SPT.</b>
@@ -50,10 +54,14 @@ git clone https://github.com/codelao/Screenshots-Parse-Tool.git
 cd Screenshots-Parse-Tool
 configure
 ```
+Finally, now you can run SPT from any directory using this command in cmd:
+```
+spt
+```
 
 
 ## Popular errors
-### Configuration errors:
+### Configure errors:
 - *! Error moving SPT to /usr/local/bin*
 - *! Error moving SPT to /usr/local/share*
 
@@ -69,11 +77,12 @@ configure
 **This error may occure not only because you don't have internet connection or VPN enabled, but also because your internet connection is too slow.**
 
 ### System errors:
-- *! Startup error*
-- Program doesn't work after startup
+- *! Process or startup error*
+- Nothing happens after using ```spt``` command
 
 **This error may occure because you have moved some SPT files to other directories.**
 **You should move them back or clone this repository and run configure script again.**
+**If you still can't fix this error, please report a bug [here](https://github.com/codelao/Screenshots-Parse-Tool/issues).**
 
 - Program crashes during parsing
 

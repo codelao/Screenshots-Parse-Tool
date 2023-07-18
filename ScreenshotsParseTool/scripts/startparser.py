@@ -50,11 +50,11 @@ class StartParserWindow(QDialog):
         self.finish_popup.setDefaultButton(self.okButton)
         self.finish_popup.exec()
         if self.finish_popup.clickedButton() == self.okButton:
-            self.count = self.db.get_screens_count()[0]
+            self.count = self.db.get_screens_count()
             self.today = datetime.datetime.today()
             self.date = self.today.strftime("%m/%d/%Y")
             if not self.count == None:
-                self.screens = self.screens_count + self.count
+                self.screens = self.screens_count + self.count[0]
                 self.db.update_stats(screens=self.screens, last_parse=self.date)
             else:
                 self.db.add_stats(screens=self.screens_count, last_parse=self.date)

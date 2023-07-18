@@ -41,35 +41,32 @@ class MainWindow(QMainWindow):
 
     def start_parser(self):
         if not self.db.check_terms() == None:
-            if self.db.check_terms()[0] == 'agree':
-                if check_internet_connection() == True:
-                    self.parser = StartParserWindow(self)
-                    self.parser.show()
-                else:
-                    self.internet_error_popup = QMessageBox(self)
-                    self.internet_error_popup.setWindowTitle('Internet error')
-                    self.internet_error_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
-                    self.internet_error_popup.move(400, 300)
-                    self.internet_error_popup.setIcon(QMessageBox.Icon.Warning)
-                    self.internet_error_popup.setText('Check your internet connection or disable VPN.')
-                    self.okButton = self.internet_error_popup.addButton(QMessageBox.StandardButton.Ok)
-                    self.internet_error_popup.setDefaultButton(self.okButton)
-                    self.internet_error_popup.exec()
+            if check_internet_connection() == True:
+                self.parser = StartParserWindow(self)
+                self.parser.show()
             else:
-                self.terms()
+                self.internet_error_popup = QMessageBox(self)
+                self.internet_error_popup.setWindowTitle('Internet error')
+                self.internet_error_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
+                self.internet_error_popup.move(400, 300)
+                self.internet_error_popup.setIcon(QMessageBox.Icon.Warning)
+                self.internet_error_popup.setText('Check your internet connection or disable VPN.')
+                self.okButton = self.internet_error_popup.addButton(QMessageBox.StandardButton.Ok)
+                self.internet_error_popup.setDefaultButton(self.okButton)
+                self.internet_error_popup.exec()
         else:
             self.terms()
 
     def stats(self):
-        self.count = self.db.get_screens_count()[0]
-        self.date = self.db.get_last_parse_date()[0]
+        self.count = self.db.get_screens_count()
+        self.date = self.db.get_last_parse_date()
         if not self.count == None:
             self.stats_popup = QMessageBox(self)
             self.stats_popup.setWindowTitle('Statistics')
             self.stats_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
             self.stats_popup.move(400, 300)
             self.stats_popup.setIcon(QMessageBox.Icon.Information)
-            self.stats_popup.setText('Screenshots parsed: ' + str(self.count) + '\nLast parse: ' + self.date)
+            self.stats_popup.setText('Screenshots parsed: ' + str(self.count[0]) + '\nLast parse: ' + self.date[0])
             self.okButton = self.stats_popup.addButton(QMessageBox.StandardButton.Ok)
             self.stats_popup.setDefaultButton(self.okButton)
             self.stats_popup.exec()
@@ -114,13 +111,13 @@ class MainWindow(QMainWindow):
 
     def terms(self):
         self.terms_popup = QMessageBox(self)
-        self.terms_popup.setWindowTitle('Terms of use')
+        self.terms_popup.setWindowTitle('Terms of Use')
         self.terms_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
         self.terms_popup.move(400, 300)
         self.terms_popup.setIcon(QMessageBox.Icon.Warning)
-        self.terms_popup.setText('DISCLAIMER')
-        self.terms_popup.setDetailedText('It is forbidden to use this tool for illegal or malicious purposes.\nDeveloper (Lao) is not responsible for the unethical use of this tool by other users.\n\nScreenshots Parse Tool\nLicensed under MIT')
-        self.agreeButton = self.terms_popup.addButton("Agree", QMessageBox.ButtonRole.ActionRole)
+        self.terms_popup.setText('DISCLAIMER\n\nIt is forbidden to use this tool for illegal or malicious purposes.\nDeveloper (Lao) is not responsible for the unethical use of this tool by other users.')
+        self.terms_popup.setDetailedText('Screenshots Parse Tool\nLicensed under MIT')
+        self.agreeButton = self.terms_popup.addButton('Agree', QMessageBox.ButtonRole.ActionRole)
         self.terms_popup.setDefaultButton(self.agreeButton)
         self.terms_popup.exec()
         if self.terms_popup.clickedButton() == self.agreeButton:
@@ -131,7 +128,7 @@ class MainWindow(QMainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     app.setApplicationName('Screenshots Parse Tool')
-    app.setApplicationVersion('0.11.5')
+    app.setApplicationVersion('0.11.6')
     setproctitle.setproctitle('Screenshots Parse Tool')
     mw = MainWindow()
     mw.show()
