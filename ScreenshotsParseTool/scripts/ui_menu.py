@@ -40,7 +40,7 @@ class Ui_MainWindow(object):
         self.text = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(30)
+        font.setPointSize(28)
         font.setBold(False)
         font.setWeight(50)
         self.text.setFont(font)

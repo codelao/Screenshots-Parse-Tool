@@ -1,3 +1,12 @@
+# 0.11.7
+*2023-07-20*
+
+### Minor improvements
+### Fixed
+- Bug with *'Parsing finished'* popup's background
+- Bug with *'Terms of Use'* popup agreement
+
+
 # 0.11.6
 *2023-07-18*
 

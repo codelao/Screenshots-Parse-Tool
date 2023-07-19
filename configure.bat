@@ -1,5 +1,7 @@
 @echo off
 
+chcp 65001 > 0
+
 :banner
 echo ╭━━━┳━━━┳━━━━╮
 echo ┃╭━╮┃╭━╮┃╭╮╭╮┃
@@ -12,6 +14,7 @@ echo Licensed under MIT
 
 
 :start
+set delete_error=! Error deleting unnecessary files
 if exist %ProgramData%\ScreenshotsParseTool (
 cls
 echo ! SPT is already configured.
@@ -32,13 +35,31 @@ cls
 echo ! Error installing dependencies
 ) else if not exist Windows (
 cls
-echo ! Error deleting unnecessary files
+echo %delete_error%
 ) else if not exist Unix (
 cls
-echo ! Error deleting unnecessary files
+echo %delete_error%
 ) else if not exist configure.sh (
 cls
-echo ! Error deleting unnecessary files
+echo %delete_error%
+) else if not exist README.md (
+cls
+echo %delete_error%
+) else if not exist CHANGELOG.md (
+cls
+echo %delete_error%
+) else if not exist readme_files (
+cls
+echo %delete_error%
+) else if not exist LICENSE (
+cls
+echo %delete_error%
+) else if not exist .gitignore (
+cls
+echo %delete_error%
+) else if not exist .git (
+cls
+echo %delete_error%
 ) else (
 move ScreenshotsParseTool %ProgramData%
 if not %errorlevel% == 0 (
@@ -50,9 +71,15 @@ if not %errorlevel% == 0 (
 cls
 echo ! Error moving SPT to %systemroot%\System32
 ) else (
-rmdir /s /q Unix
 rmdir /s /q Windows
+rmdir /s /q Unix
+rmdir /s /q readme_files
+rmdir /s /q .git
 del /f configure.sh
+del /f README.md
+del /f CHANGELOG.md
+del /f LICENSE
+del /f .gitignore
 echo SPT successfully configured.
 )
 )

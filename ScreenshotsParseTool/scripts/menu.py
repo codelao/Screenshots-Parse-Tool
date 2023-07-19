@@ -48,6 +48,9 @@ class MainWindow(QMainWindow):
                 self.internet_error_popup = QMessageBox(self)
                 self.internet_error_popup.setWindowTitle('Internet error')
                 self.internet_error_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
+                self.internet_error_popup.setStyleSheet('QMessageBox {\n'
+                                                        'background-color: white;\n'
+                                                        '}')
                 self.internet_error_popup.move(400, 300)
                 self.internet_error_popup.setIcon(QMessageBox.Icon.Warning)
                 self.internet_error_popup.setText('Check your internet connection or disable VPN.')
@@ -64,6 +67,9 @@ class MainWindow(QMainWindow):
             self.stats_popup = QMessageBox(self)
             self.stats_popup.setWindowTitle('Statistics')
             self.stats_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
+            self.stats_popup.setStyleSheet('QMessageBox {\n'
+                                            'background-color: white;\n'
+                                            '}')
             self.stats_popup.move(400, 300)
             self.stats_popup.setIcon(QMessageBox.Icon.Information)
             self.stats_popup.setText('Screenshots parsed: ' + str(self.count[0]) + '\nLast parse: ' + self.date[0])
@@ -74,6 +80,9 @@ class MainWindow(QMainWindow):
             self.stats_popup = QMessageBox(self)
             self.stats_popup.setWindowTitle('Statistics')
             self.stats_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
+            self.stats_popup.setStyleSheet('QMessageBox {\n'
+                                            'background-color: white;\n'
+                                            '}')
             self.stats_popup.move(400, 300)
             self.stats_popup.setIcon(QMessageBox.Icon.Information)
             self.stats_popup.setText('No data yet.')
@@ -113,11 +122,15 @@ class MainWindow(QMainWindow):
         self.terms_popup = QMessageBox(self)
         self.terms_popup.setWindowTitle('Terms of Use')
         self.terms_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
+        self.terms_popup.setStyleSheet('QMessageBox {\n'
+                                        'background-color: white;\n'
+                                        '}')
         self.terms_popup.move(400, 300)
         self.terms_popup.setIcon(QMessageBox.Icon.Warning)
         self.terms_popup.setText('DISCLAIMER\n\nIt is forbidden to use this tool for illegal or malicious purposes.\nDeveloper (Lao) is not responsible for the unethical use of this tool by other users.')
         self.terms_popup.setDetailedText('Screenshots Parse Tool\nLicensed under MIT')
-        self.agreeButton = self.terms_popup.addButton('Agree', QMessageBox.ButtonRole.ActionRole)
+        self.agreeButton = self.terms_popup.addButton('Agree', QMessageBox.ButtonRole.AcceptRole)
+        self.terms_popup.addButton(QMessageBox.StandardButton.Cancel)
         self.terms_popup.setDefaultButton(self.agreeButton)
         self.terms_popup.exec()
         if self.terms_popup.clickedButton() == self.agreeButton:

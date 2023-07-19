@@ -47,7 +47,7 @@ spt
 ```
 
 ### Windows
-<b>On Windows you need to <u>run cmd as administrator</u>, otherwise you won't be able to correctly configure SPT.</b>
+First of all, you need to **run cmd as administrator**, otherwise you won't be able to correctly configure SPT.
 ```
 cd %userprofile%
 git clone https://github.com/codelao/Screenshots-Parse-Tool.git

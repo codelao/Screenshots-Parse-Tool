@@ -36,6 +36,9 @@ class StartParserWindow(QDialog):
         self.screens_count = self.UI.spinBox.value()
         self.UI.progressBar.setMinimum(0)
         self.UI.progressBar.setMaximum(self.screens_count)
+        self.UI.button1.setEnabled(False)
+        self.UI.button2.setEnabled(False)
+        self.UI.spinBox.setEnabled(False)
         for screens in range(self.screens_count):
             downloader()
             self.UI.progressBar.setValue(screens + 1)
@@ -43,6 +46,9 @@ class StartParserWindow(QDialog):
         self.finish_popup = QMessageBox(self)
         self.finish_popup.setWindowTitle('Parsing finished')
         self.finish_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
+        self.finish_popup.setStyleSheet('QMessageBox {\n'
+                                        'background-color: white;\n'
+                                        '}')
         self.finish_popup.move(400, 300)
         self.finish_popup.setIcon(QMessageBox.Icon.Information)
         self.finish_popup.setText('Screenshots (' + str(self.screens_count) + ') successfully parsed!')
@@ -58,6 +64,9 @@ class StartParserWindow(QDialog):
                 self.db.update_stats(screens=self.screens, last_parse=self.date)
             else:
                 self.db.add_stats(screens=self.screens_count, last_parse=self.date)
+        self.UI.button1.setEnabled(True)
+        self.UI.button2.setEnabled(True)
+        self.UI.spinBox.setEnabled(True)
         self.UI.progressBar.setValue(0)
 
     def back(self):

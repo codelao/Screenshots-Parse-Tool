@@ -31,6 +31,7 @@ class Ui_Dialog(object):
         self.text.setObjectName("text")
         self.verticalLayout.addWidget(self.text, 0, QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
         self.spinBox = QtWidgets.QSpinBox(parent=self.verticalLayoutWidget)
+        self.spinBox.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -47,6 +48,10 @@ class Ui_Dialog(object):
 "\n"
 "QSpinBox::up-button:pressed, QSpinBox::down-button:pressed {\n"
 "    background-color: #050359;\n"
+"}\n"
+"\n"
+"QSpinBox:disabled {\n"
+"    background-color: #A3A3A3;\n"
 "}")
         self.spinBox.setSuffix("")
         self.spinBox.setPrefix("")
@@ -55,6 +60,7 @@ class Ui_Dialog(object):
         self.spinBox.setObjectName("spinBox")
         self.verticalLayout.addWidget(self.spinBox, 0, QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
         self.button1 = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.button1.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -73,10 +79,15 @@ class Ui_Dialog(object):
 "\n"
 "QPushButton:pressed {\n"
 "    background-color: #050359;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: #A3A3A3;\n"
 "}")
         self.button1.setObjectName("button1")
         self.verticalLayout.addWidget(self.button1, 0, QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
         self.button2 = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.button2.setEnabled(True)
         self.button2.setMinimumSize(QtCore.QSize(70, 30))
         font = QtGui.QFont()
         font.setFamily("Rubik")
@@ -90,6 +101,10 @@ class Ui_Dialog(object):
 "\n"
 "QPushButton:pressed {\n"
 "    background-color: #050359;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: #A3A3A3;\n"
 "}")
         self.button2.setObjectName("button2")
         self.verticalLayout.addWidget(self.button2, 0, QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
@@ -102,7 +117,7 @@ class Ui_Dialog(object):
 "    border-radius: 0px;\n"
 "    background-color: #D4D4D4;\n"
 "    text-align: center;\n"
-"    color: white;\n"
+"    color: #A3A3A3;\n"
 "}\n"
 "\n"
 "QProgressBar::chunk {\n"
