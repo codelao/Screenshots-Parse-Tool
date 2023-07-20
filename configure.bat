@@ -48,7 +48,7 @@ echo %delete_error%
 ) else if not exist CHANGELOG.md (
 cls
 echo %delete_error%
-) else if not exist readme_files (
+) else if not exist readme_images (
 cls
 echo %delete_error%
 ) else if not exist LICENSE (
@@ -73,7 +73,7 @@ echo ! Error moving SPT to %systemroot%\System32
 ) else (
 rmdir /s /q Windows
 rmdir /s /q Unix
-rmdir /s /q readme_files
+rmdir /s /q readme_images
 rmdir /s /q .git
 del /f configure.sh
 del /f README.md

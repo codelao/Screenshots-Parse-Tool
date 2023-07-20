@@ -43,7 +43,7 @@ echo -e $delete_error
 elif ! [ -d "CHANGELOG.md" ]; then
 clear
 echo -e $delete_error
-elif ! [ -d "readme_files" ]; then
+elif ! [ -d "readme_images" ]; then
 clear
 echo -e $delete_error
 elif ! [ -d "LICENSE" ]; then
@@ -67,7 +67,7 @@ echo -e "\033[31m! Error moving SPT to /usr/local/share\033[0m"
 else
 rm Windows
 rm Unix
-rm readme_files
+rm readme_images
 rm .git
 rm configure.bat
 rm README.md
