@@ -52,7 +52,7 @@ First of all, you need to **run cmd as administrator**, otherwise you won't be a
 cd %userprofile%
 git clone https://github.com/codelao/Screenshots-Parse-Tool.git
 cd Screenshots-Parse-Tool
-configure
+configure.bat
 ```
 Finally, now you can run SPT from any directory using this command in cmd:
 ```
@@ -73,14 +73,15 @@ spt
 
 ### Program errors:
 - *Check your internet connection or disable VPN.*
+- Program crashes after clicking on **'Launch'** button
 
-**This error may occure not only because you don't have internet connection or VPN enabled, but also because your internet connection is too slow.**
+**This errors may occure not only because you don't have internet connection or VPN enabled, but also because your internet connection is too slow.**
 
 ### System errors:
 - *! Process or startup error*
 - Nothing happens after using ```spt``` command
 
-**This error may occure because you have moved some SPT files to other directories.**
+**This errors may occure because you have moved some SPT files to other directories.**
 **You should move them back or clone this repository and run configure script again.**
 **If you still can't fix this error, please report a bug [here](https://github.com/codelao/Screenshots-Parse-Tool/issues).**
 
