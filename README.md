@@ -12,16 +12,21 @@
 
 
 ### Themes:
+#### macOS
 <img src="readme_images/menu1.png" width="30%">
-
 <img src="readme_images/menu2.png" width="30%">
+
+#### Windows
+<img src="readme_images/menu3.png" width="30%">
+<img src="readme_images/menu4.png" width="30%">
 
 ### Parsing:
 <img src="readme_images/parser1.png" width="30%">
-
 <img src="readme_images/parser2.png" width="30%">
+<img src="readme_images/parser3.png" width="30%">
+<img src="readme_images/parser4.png" width="30%">
 
-### Directories:
+### Auto-created directories:
 <img src="readme_images/dirs.png" width="60%">
 
 
@@ -73,7 +78,7 @@ spt
 
 ### Program errors:
 - *Check your internet connection or disable VPN.*
-- Program crashes after clicking on **'Launch'** button
+- Program crashes after clicking on ***Launch*** button
 
 **This errors may occure not only because you don't have internet connection or VPN enabled, but also because your internet connection is too slow.**
 
