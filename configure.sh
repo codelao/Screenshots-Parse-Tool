@@ -34,22 +34,22 @@ echo -e $delete_error
 elif ! [ -d "Unix" ]; then
 clear
 echo -e $delete_error
-elif ! [ -d "configure.bat" ]; then
+elif ! [ -f "configure.bat" ]; then
 clear
 echo -e $delete_error
-elif ! [ -d "README.md" ]; then
+elif ! [ -f "README.md" ]; then
 clear
 echo -e $delete_error
-elif ! [ -d "CHANGELOG.md" ]; then
+elif ! [ -f "CHANGELOG.md" ]; then
 clear
 echo -e $delete_error
 elif ! [ -d "readme_images" ]; then
 clear
 echo -e $delete_error
-elif ! [ -d "LICENSE" ]; then
+elif ! [ -f "LICENSE" ]; then
 clear
 echo -e $delete_error
-elif ! [ -d ".gitignore" ]; then
+elif ! [ -f ".gitignore" ]; then
 clear
 echo -e $delete_error
 elif ! [ -d ".git" ]; then
