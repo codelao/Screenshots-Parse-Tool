@@ -18,7 +18,7 @@ class StartParserWindow(QDialog):
         self.UI.setupUi(self)
         if self.theme == None or self.theme[0] == 'light':
             self.setStyleSheet('QDialog {\n'
-            'background-color: white;\n'
+            'background-color: #FFFFFF;\n'
             '}')
         else:
             self.setStyleSheet('QDialog {\n'
@@ -47,7 +47,8 @@ class StartParserWindow(QDialog):
         self.finish_popup.setWindowTitle('Parsing finished')
         self.finish_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
         self.finish_popup.setStyleSheet('QMessageBox {\n'
-                                        'background-color: white;\n'
+                                        'background-color: #FFFFFF;\n'
+                                        'color: #000000;\n'
                                         '}')
         self.finish_popup.move(400, 300)
         self.finish_popup.setIcon(QMessageBox.Icon.Information)

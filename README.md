@@ -20,6 +20,10 @@
 <img src="readme_images/menu3.png" width="30%">
 <img src="readme_images/menu4.png" width="30%">
 
+#### Linux
+<img src="readme_images/menu5.png" width="30%">
+<img src="readme_images/menu6.png" width="30%">
+
 ### Parsing:
 <img src="readme_images/parser1.png" width="30%">
 <img src="readme_images/parser2.png" width="30%">
@@ -52,12 +56,12 @@ spt
 ```
 
 ### Windows
-First of all, you need to **run cmd as administrator**, otherwise you won't be able to correctly configure SPT.
+First of all, you need to **run cmd as administrator**, otherwise you won't be able to correctly install SPT.
 ```
 cd %userprofile%
 git clone https://github.com/codelao/Screenshots-Parse-Tool.git
 cd Screenshots-Parse-Tool
-configure.bat
+configure
 ```
 Finally, now you can run SPT from any directory using this command in cmd:
 ```
@@ -67,14 +71,11 @@ spt
 
 ## Popular errors
 ### Configure errors:
-- *! Error moving SPT to /usr/local/bin*
-- *! Error moving SPT to /usr/local/share*
+- *! Script don't have enough rights to move SPT files to /usr/local/share*
+- *! Script don't have enough rights to move SPT files to /usr/local/bin*
+- *! Script don't have enough rights to move SPT files to C:\Windows\System32*
 
-**This errors may occure because you don't have enough rights to move SPT files to this directories.**
-
-- *! Error moving SPT to C:\Windows\System32*
-
-**This error may occure because you didn't run *cmd* as administrator before starting to install SPT.**
+**This errors may occure because you didn't run *cmd* or configure script as administrator on Windows, or because you don't have root access at all.**
 
 ### Program errors:
 - *Check your internet connection or disable VPN.*

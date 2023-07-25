@@ -22,7 +22,7 @@ class MainWindow(QMainWindow):
         self.UI.setupUi(self)
         if self.theme == None or self.theme[0] == 'light':
             self.setStyleSheet('QMainWindow {\n'
-            'background-color: white;\n'
+            'background-color: #FFFFFF;\n'
             '}')
         else:
             self.setStyleSheet('QMainWindow {\n'
@@ -49,7 +49,8 @@ class MainWindow(QMainWindow):
                 self.internet_error_popup.setWindowTitle('Internet error')
                 self.internet_error_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
                 self.internet_error_popup.setStyleSheet('QMessageBox {\n'
-                                                        'background-color: white;\n'
+                                                        'background-color: #FFFFFF;\n'
+                                                        'color: #000000;\n'
                                                         '}')
                 self.internet_error_popup.move(400, 300)
                 self.internet_error_popup.setIcon(QMessageBox.Icon.Warning)
@@ -68,7 +69,8 @@ class MainWindow(QMainWindow):
             self.stats_popup.setWindowTitle('Statistics')
             self.stats_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
             self.stats_popup.setStyleSheet('QMessageBox {\n'
-                                            'background-color: white;\n'
+                                            'background-color: #FFFFFF;\n'
+                                            'color: #000000;\n'
                                             '}')
             self.stats_popup.move(400, 300)
             self.stats_popup.setIcon(QMessageBox.Icon.Information)
@@ -81,7 +83,8 @@ class MainWindow(QMainWindow):
             self.stats_popup.setWindowTitle('Statistics')
             self.stats_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
             self.stats_popup.setStyleSheet('QMessageBox {\n'
-                                            'background-color: white;\n'
+                                            'background-color: #FFFFFF;\n'
+                                            'color: #000000;\n'
                                             '}')
             self.stats_popup.move(400, 300)
             self.stats_popup.setIcon(QMessageBox.Icon.Information)
@@ -123,7 +126,8 @@ class MainWindow(QMainWindow):
         self.terms_popup.setWindowTitle('Terms of Use')
         self.terms_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
         self.terms_popup.setStyleSheet('QMessageBox {\n'
-                                        'background-color: white;\n'
+                                        'background-color: #FFFFFF;\n'
+                                        'color: #000000;\n'
                                         '}')
         self.terms_popup.move(400, 300)
         self.terms_popup.setIcon(QMessageBox.Icon.Warning)
@@ -141,7 +145,7 @@ class MainWindow(QMainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     app.setApplicationName('Screenshots Parse Tool')
-    app.setApplicationVersion('0.11.6')
+    app.setApplicationVersion('0.11.8')
     setproctitle.setproctitle('Screenshots Parse Tool')
     mw = MainWindow()
     mw.show()

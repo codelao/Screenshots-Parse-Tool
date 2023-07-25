@@ -1,3 +1,9 @@
+# 0.11.8
+*2023-07-25*
+
+### Fixed popup colors and configuration errors on Linux
+
+
 # 0.11.7
 *2023-07-20*
 
@@ -60,12 +66,6 @@
 *2023-06-01*
 
 ### Finally finished!
-
-
-# 0.2.5
-*2023-05-18*
-
-### Alpha soon...
 
 
 # 0.3.3
