@@ -65,14 +65,6 @@ exit /b 1
 cls
 echo %delete_error%
 exit /b 1
-) else if not exist .gitignore (
-cls
-echo %delete_error%
-exit /b 1
-) else if not exist .git (
-cls
-echo %delete_error%
-exit /b 1
 ) else (
 move Windows\spt.bat %systemroot%\System32
 if not %errorlevel% == 0 (
@@ -89,12 +81,10 @@ exit /b 1
 rmdir /s /q Windows
 rmdir /s /q Unix
 rmdir /s /q readme_images
-rmdir /s /q .git
 del /f configure.sh
 del /f README.md
 del /f CHANGELOG.md
 del /f LICENSE
-del /f .gitignore
 echo SPT successfully configured.
 exit /b 0
 )

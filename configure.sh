@@ -60,14 +60,6 @@ elif ! [ -f "LICENSE" ]; then
 clear
 echo -e $delete_error
 exit 1
-elif ! [ -f ".gitignore" ]; then
-clear
-echo -e $delete_error
-exit 1
-elif ! [ -d ".git" ]; then
-clear
-echo -e $delete_error
-exit 1
 elif ! sudo mv Unix/spt /usr/local/bin; then
 clear
 echo -e "\033[31m! Script don't have enough rights to move SPT files to /usr/local/bin\033[0m"
@@ -84,12 +76,10 @@ else
 rm -r Windows
 rm -r Unix
 rm -r readme_images
-rm -r .git
 rm configure.bat
 rm README.md
 rm CHANGELOG.md
 rm LICENSE
-rm .gitignore
 echo -e "\033[32mSPT successfully configured.\033[0m"
 exit 0
 fi
