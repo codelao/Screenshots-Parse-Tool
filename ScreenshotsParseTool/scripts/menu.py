@@ -1,22 +1,20 @@
 import sys
-import os
 import subprocess
 import webbrowser
 import setproctitle
+from ScreenshotsParseTool import NAME, VERSION, PATH
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt6.QtGui import QFontDatabase, QPixmap
-from startparser import StartParserWindow
-from ui_menu import Ui_MainWindow
-from dbase import Database
-from check_internet import check_internet_connection
+from .startparser import StartParserWindow
+from .ui_menu import Ui_MainWindow
+from .dbase import Database
+from .check_internet import check_internet_connection
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        self.current_dir = os.path.dirname(__file__)
-        self.path = os.path.abspath(os.path.join(self.current_dir, os.pardir))
-        self.db = Database(self.path + '/database/spt_db.db')
+        self.db = Database(PATH + '/database/spt_db.db')
         self.theme = self.db.check_theme()
         self.UI = Ui_MainWindow()
         self.UI.setupUi(self)
@@ -28,7 +26,7 @@ class MainWindow(QMainWindow):
             self.setStyleSheet('QMainWindow {\n'
             'background-color: #330230;\n'
             '}')
-        QFontDatabase.addApplicationFont(self.path + '/fonts/Rubik.ttf')
+        QFontDatabase.addApplicationFont(PATH + '/fonts/Rubik.ttf')
         self.connections()
 
     def connections(self):
@@ -47,7 +45,7 @@ class MainWindow(QMainWindow):
             else:
                 self.internet_error_popup = QMessageBox(self)
                 self.internet_error_popup.setWindowTitle('Internet error')
-                self.internet_error_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
+                self.internet_error_popup.setIconPixmap(QPixmap(PATH + '/images/logo.png'))
                 self.internet_error_popup.setStyleSheet('QMessageBox {\n'
                                                         'background-color: #FFFFFF;\n'
                                                         'color: #000000;\n'
@@ -67,7 +65,7 @@ class MainWindow(QMainWindow):
         if not self.count == None:
             self.stats_popup = QMessageBox(self)
             self.stats_popup.setWindowTitle('Statistics')
-            self.stats_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
+            self.stats_popup.setIconPixmap(QPixmap(PATH + '/images/logo.png'))
             self.stats_popup.setStyleSheet('QMessageBox {\n'
                                             'background-color: #FFFFFF;\n'
                                             'color: #000000;\n'
@@ -81,7 +79,7 @@ class MainWindow(QMainWindow):
         else:
             self.stats_popup = QMessageBox(self)
             self.stats_popup.setWindowTitle('Statistics')
-            self.stats_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
+            self.stats_popup.setIconPixmap(QPixmap(PATH + '/images/logo.png'))
             self.stats_popup.setStyleSheet('QMessageBox {\n'
                                             'background-color: #FFFFFF;\n'
                                             'color: #000000;\n'
@@ -124,7 +122,7 @@ class MainWindow(QMainWindow):
     def terms(self):
         self.terms_popup = QMessageBox(self)
         self.terms_popup.setWindowTitle('Terms of Use')
-        self.terms_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
+        self.terms_popup.setIconPixmap(QPixmap(PATH + '/images/logo.png'))
         self.terms_popup.setStyleSheet('QMessageBox {\n'
                                         'background-color: #FFFFFF;\n'
                                         'color: #000000;\n'
@@ -140,13 +138,16 @@ class MainWindow(QMainWindow):
         if self.terms_popup.clickedButton() == self.agreeButton:
             if self.db.check_terms() == None:
                 self.db.add_terms(terms='agree')
-                             
 
-if __name__ == '__main__':
+
+def entry_point():
     app = QApplication(sys.argv)
-    app.setApplicationName('Screenshots Parse Tool')
-    app.setApplicationVersion('0.11.8')
-    setproctitle.setproctitle('Screenshots Parse Tool')
+    app.setApplicationName(NAME)
+    app.setApplicationVersion(VERSION)
+    setproctitle.setproctitle(NAME)
     mw = MainWindow()
     mw.show()
     sys.exit(app.exec())
+
+if __name__ == '__main__':
+    entry_point()

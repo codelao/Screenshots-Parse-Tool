@@ -1,3 +1,9 @@
+# 0.12.0
+*2023-08-08*
+
+### Small improvements and new installation method
+
+
 # 0.11.8-b
 *2023-07-25*
 

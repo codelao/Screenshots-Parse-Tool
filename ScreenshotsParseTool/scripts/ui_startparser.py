@@ -1,18 +1,16 @@
-import os
+from ScreenshotsParseTool import PATH
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
-        self.current_dir = os.path.dirname(__file__)
-        self.path = os.path.abspath(os.path.join(self.current_dir, os.pardir))
         Dialog.setObjectName("Dialog")
         Dialog.setFixedSize(280, 200)
         font = QtGui.QFont()
         font.setFamily("Rubik")
         Dialog.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(self.path + "/images/logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(PATH + "/images/logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         Dialog.setWindowIcon(icon)
         Dialog.setStyleSheet("")
         self.verticalLayoutWidget = QtWidgets.QWidget(parent=Dialog)

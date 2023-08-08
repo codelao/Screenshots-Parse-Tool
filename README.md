@@ -13,25 +13,25 @@
 
 ### Themes:
 #### macOS
-<img src="readme_images/menu1.png" width="30%">
-<img src="readme_images/menu2.png" width="30%">
+<img src="ReadmeImages/menu1.png" width="30%">
+<img src="ReadmeImages/menu2.png" width="30%">
 
 #### Windows
-<img src="readme_images/menu3.png" width="30%">
-<img src="readme_images/menu4.png" width="30%">
+<img src="ReadmeImages/menu3.png" width="30%">
+<img src="ReadmeImages/menu4.png" width="30%">
 
 #### Linux
-<img src="readme_images/menu5.png" width="30%">
-<img src="readme_images/menu6.png" width="30%">
+<img src="ReadmeImages/menu5.png" width="30%">
+<img src="ReadmeImages/menu6.png" width="30%">
 
 ### Parsing:
-<img src="readme_images/parser1.png" width="30%">
-<img src="readme_images/parser2.png" width="30%">
-<img src="readme_images/parser3.png" width="30%">
-<img src="readme_images/parser4.png" width="30%">
+<img src="ReadmeImages/parser1.png" width="30%">
+<img src="ReadmeImages/parser2.png" width="30%">
+<img src="ReadmeImages/parser3.png" width="30%">
+<img src="ReadmeImages/parser4.png" width="30%">
 
 ### Auto-created directories:
-<img src="readme_images/dirs.png" width="60%">
+<img src="ReadmeImages/dirs.png" width="60%">
 
 
 ## Usage
@@ -43,55 +43,78 @@ This "vulnerability" can show this screenshots, so SPT generates unique links to
 
 
 ## Installation
-### macOS/Linux
+### Linux/macOS
+#### Manual installation
+1. Download [install.sh](https://github.com/codelao/Screenshots-Parse-Tool/releases) script from the latest release.
+2. Open terminal in the directory with downloaded script and run the following command:
 ```
-git clone https://github.com/codelao/Screenshots-Parse-Tool.git
-cd Screenshots-Parse-Tool
-chmod +x configure.sh
-./configure.sh
+bash install.sh
 ```
-Finally, now you can run SPT from any directory using this command in terminal:
+3. Finally, now you can always run SPT using this command:
+```
+spt
+```
+
+#### Easy installation
+*This method requires 'wget' to be installed in your system first.*
+1. Run the following command:
+```
+wget https://github.com/codelao/Screenshots-Parse-Tool/releases/download/v0.12.0/install.sh && bash install.sh
+```
+2. Finally, now you can always run SPT using this command:
 ```
 spt
 ```
 
 ### Windows
-First of all, you need to **run cmd as administrator**, otherwise you won't be able to correctly install SPT.
+#### Manual installation
+1. Download [install.bat](https://github.com/codelao/Screenshots-Parse-Tool/releases) script from the latest release.
+2. Open cmd in the directory with downloaded script and run the following command:
 ```
-cd %userprofile%
-git clone https://github.com/codelao/Screenshots-Parse-Tool.git
-cd Screenshots-Parse-Tool
-configure
+install
 ```
-Finally, now you can run SPT from any directory using this command in cmd:
+3. Finally, now you can always run SPT using this command:
+```
+spt
+```
+
+#### Easy installation
+*This method requires 'wget' to be installed in your system first.*
+1. Run the following command:
+```
+wget https://github.com/codelao/Screenshots-Parse-Tool/releases/download/v0.12.0/install.bat && install
+```
+2. Finally, now you can always run SPT using this command:
 ```
 spt
 ```
 
 
 ## Popular errors
-### Configure errors:
-- *! Script don't have enough rights to move SPT files to /usr/local/share*
-- *! Script don't have enough rights to move SPT files to /usr/local/bin*
-- *! Script don't have enough rights to move SPT files to C:\Windows\System32*
+### Installation errors:
+- '*WARNING: The script spt.exe is installed in '\your\path\here' which is not on PATH.*
+*Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.*'
 
-**This errors may occure because you didn't run *cmd* or configure script as administrator on Windows, or because you don't have root access at all.**
+**This error usually occurs on Windows.**
+**You can fix it using this command:**
+```
+setx PATH "%PATH%;\your\path\here"
+```
+**Replace '*\your\path\here*' with the real path, which is specified in the error message.**
 
 ### Program errors:
-- *Check your internet connection or disable VPN.*
+- '*Check your internet connection or disable VPN.*'
 - Program crashes after clicking on ***Launch*** button
 
 **This errors may occure not only because you don't have internet connection or VPN enabled, but also because your internet connection is too slow.**
 
 ### System errors:
-- *! Process or startup error*
-- Nothing happens after using ```spt``` command
+- Nothing happens or an error occurs after running SPT
 
-**This errors may occure because you have moved some SPT files to other directories.**
-**You should move them back or clone this repository and run configure script again.**
+**In this case you should try reinstalling SPT. Please, make sure that you don't get any installation errors.**
 **If you still can't fix this error, please report a bug [here](https://github.com/codelao/Screenshots-Parse-Tool/issues).**
 
-- Program crashes during parsing
+- Program crashes during parsing process
 
 **This error may occure because your internet connection is too slow.**
 

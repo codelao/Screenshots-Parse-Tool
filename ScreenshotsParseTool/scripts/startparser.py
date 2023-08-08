@@ -1,18 +1,16 @@
-import os
 import datetime
+from ScreenshotsParseTool import PATH
 from PyQt6.QtWidgets import QDialog, QApplication, QMessageBox
 from PyQt6.QtGui import QPixmap, QFontDatabase
-from dbase import Database
-from ui_startparser import Ui_Dialog
-from get_screenshot import downloader
+from .dbase import Database
+from .ui_startparser import Ui_Dialog
+from .get_screenshot import downloader
 
 
 class StartParserWindow(QDialog):
     def __init__(self, parent):
         super(StartParserWindow, self).__init__()
-        self.current_dir = os.path.dirname(__file__)
-        self.path = os.path.abspath(os.path.join(self.current_dir, os.pardir))
-        self.db = Database(self.path + '/database/spt_db.db')
+        self.db = Database(PATH + '/database/spt_db.db')
         self.theme = self.db.check_theme()
         self.UI = Ui_Dialog()
         self.UI.setupUi(self)
@@ -24,7 +22,7 @@ class StartParserWindow(QDialog):
             self.setStyleSheet('QDialog {\n'
             'background-color: #330230;\n'
             '}')
-        QFontDatabase.addApplicationFont(self.path + '/fonts/Rubik.ttf')
+        QFontDatabase.addApplicationFont(PATH + '/fonts/Rubik.ttf')
         self.connections()
         self.parent = parent
 
@@ -45,7 +43,7 @@ class StartParserWindow(QDialog):
             QApplication.processEvents()
         self.finish_popup = QMessageBox(self)
         self.finish_popup.setWindowTitle('Parsing finished')
-        self.finish_popup.setIconPixmap(QPixmap(self.path + '/images/logo.png'))
+        self.finish_popup.setIconPixmap(QPixmap(PATH + '/images/logo.png'))
         self.finish_popup.setStyleSheet('QMessageBox {\n'
                                         'background-color: #FFFFFF;\n'
                                         'color: #000000;\n'

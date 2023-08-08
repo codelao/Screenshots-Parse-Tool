@@ -1,11 +1,9 @@
-import os
+from ScreenshotsParseTool import PATH
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        self.current_dir = os.path.dirname(__file__)
-        self.path = os.path.abspath(os.path.join(self.current_dir, os.pardir))
         MainWindow.setObjectName("MainWindow")
         MainWindow.setFixedSize(430, 340)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
@@ -18,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setFont(font)
         MainWindow.setAcceptDrops(False)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(self.path + "/images/logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(PATH + "/images/logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("")
         MainWindow.setDocumentMode(False)
@@ -100,7 +98,7 @@ class Ui_MainWindow(object):
         self.image = QtWidgets.QLabel(parent=self.centralwidget)
         self.image.setGeometry(QtCore.QRect(150, 40, 291, 301))
         self.image.setText("")
-        self.image.setPixmap(QtGui.QPixmap(self.path + "/images/logo.png"))
+        self.image.setPixmap(QtGui.QPixmap(PATH + "/images/logo.png"))
         self.image.setScaledContents(True)
         self.image.setObjectName("image")
         MainWindow.setCentralWidget(self.centralwidget)
