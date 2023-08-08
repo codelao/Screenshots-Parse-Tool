@@ -13,25 +13,25 @@
 
 ### Themes:
 #### macOS
-<img src="ReadmeImages/menu1.png" width="30%">
-<img src="ReadmeImages/menu2.png" width="30%">
+<img src="READMEimages/menu1.png" width="30%">
+<img src="READMEimages/menu2.png" width="30%">
 
 #### Windows
-<img src="ReadmeImages/menu3.png" width="30%">
-<img src="ReadmeImages/menu4.png" width="30%">
+<img src="READMEimages/menu3.png" width="30%">
+<img src="READMEimages/menu4.png" width="30%">
 
 #### Linux
-<img src="ReadmeImages/menu5.png" width="30%">
-<img src="ReadmeImages/menu6.png" width="30%">
+<img src="READMEimages/menu5.png" width="30%">
+<img src="READMEimages/menu6.png" width="30%">
 
 ### Parsing:
-<img src="ReadmeImages/parser1.png" width="30%">
-<img src="ReadmeImages/parser2.png" width="30%">
-<img src="ReadmeImages/parser3.png" width="30%">
-<img src="ReadmeImages/parser4.png" width="30%">
+<img src="READMEimages/parser1.png" width="30%">
+<img src="READMEimages/parser2.png" width="30%">
+<img src="READMEimages/parser3.png" width="30%">
+<img src="READMEimages/parser4.png" width="30%">
 
 ### Auto-created directories:
-<img src="ReadmeImages/dirs.png" width="60%">
+<img src="READMEimages/dirs.png" width="60%">
 
 
 ## Usage
