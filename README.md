@@ -8,6 +8,7 @@
 
 * [Usage](#usage)
 * [Installation](#installation)
+* [Uninstallation](#uninstallation)
 * [Popular errors](#popular-errors)
 
 
@@ -87,6 +88,13 @@ wget https://github.com/codelao/Screenshots-Parse-Tool/releases/download/v0.12.0
 2. Finally, now you can always run SPT using this command:
 ```
 spt
+```
+
+
+## Uninstallation
+As installation scripts automatically delete all unnecessary files, you can uninstall SPT only using this command:
+```
+pip3 uninstall Screenshots-Parse-Tool
 ```
 
 
