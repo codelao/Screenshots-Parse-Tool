@@ -60,7 +60,7 @@ spt
 *This method requires 'wget' to be installed in your system first.*
 1. Run the following command:
 ```
-wget https://github.com/codelao/Screenshots-Parse-Tool/releases/download/v0.12.0/install.sh && bash install.sh
+wget https://github.com/codelao/Screenshots-Parse-Tool/raw/main/install.sh && bash install.sh
 ```
 2. Finally, now you can always run SPT using this command:
 ```
@@ -83,7 +83,7 @@ spt
 *This method requires 'wget' to be installed in your system first.*
 1. Run the following command:
 ```
-wget https://github.com/codelao/Screenshots-Parse-Tool/releases/download/v0.12.0/install.bat && install
+wget https://github.com/codelao/Screenshots-Parse-Tool/raw/main/install.bat && install
 ```
 2. Finally, now you can always run SPT using this command:
 ```
