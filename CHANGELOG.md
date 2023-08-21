@@ -1,3 +1,9 @@
+# 0.12.1
+*2023-08-21*
+
+### Now you can use SPT on mobile internet or with VPN enabled
+
+
 # 0.12.0
 *2023-08-08*
 

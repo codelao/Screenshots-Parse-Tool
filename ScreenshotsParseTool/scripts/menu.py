@@ -52,7 +52,7 @@ class MainWindow(QMainWindow):
                                                         '}')
                 self.internet_error_popup.move(400, 300)
                 self.internet_error_popup.setIcon(QMessageBox.Icon.Warning)
-                self.internet_error_popup.setText('Check your internet connection or disable VPN.')
+                self.internet_error_popup.setText('Check your internet connection or try again.')
                 self.okButton = self.internet_error_popup.addButton(QMessageBox.StandardButton.Ok)
                 self.internet_error_popup.setDefaultButton(self.okButton)
                 self.internet_error_popup.exec()

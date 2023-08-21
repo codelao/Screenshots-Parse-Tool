@@ -111,10 +111,10 @@ setx PATH "%PATH%;\your\path\here"
 **Replace '*\your\path\here*' with the real path, which is specified in the error message.**
 
 ### Program errors:
-- '*Check your internet connection or disable VPN.*'
+- '*Check your internet connection or try again.*'
 - Program crashes after clicking on ***Launch*** button
 
-**This errors may occure not only because you don't have internet connection or VPN enabled, but also because your internet connection is too slow.**
+**This errors may occure not only because you don't have internet connection, but also because your internet is too slow.**
 
 ### System errors:
 - Nothing happens or an error occurs after running SPT
