@@ -1,9 +1,9 @@
-from urllib.request import urlopen
+import urllib.request
 
 
 def check_internet_connection():
         try:
-            urlopen('https://google.com')
+            urllib.request.urlopen('https://google.com', timeout=1)
             return True
         except:
             return False
