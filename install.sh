@@ -29,20 +29,20 @@ if ! python3 --version; then
     printf "\033[31m! Script can't check Python3 version before continuing\033[0m\n"
     exit 1
 else
-    if git clone https://github.com/codelao/Screenshots-Parse-Tool.git; then
-        if pip3 install Screenshots-Parse-Tool/.; then 
-            rm -rf Screenshots-Parse-Tool
-            printf "\033[32mSPT successfully installed.\033[0m\n"
-            exit 0
-        else
-            clear
-            printf "\033[31m! Pip can't install SPT package\033[0m\n"
-            exit 1
-        fi
-    else
+    if ! git clone https://github.com/codelao/Screenshots-Parse-Tool.git; then
         clear
         printf "\033[31m! Script can't clone SPT repository\033[0m\n"
         exit 1
+    else
+        if ! pip3 install Screenshots-Parse-Tool/.; then
+            clear
+            printf "\033[31m! Pip can't install SPT\033[0m\n"
+            exit 1
+        else
+            rm -rf Screenshots-Parse-Tool
+            printf "\033[32mSPT successfully installed.\033[0m\n"
+            exit 0
+        fi
     fi
 fi
 }
