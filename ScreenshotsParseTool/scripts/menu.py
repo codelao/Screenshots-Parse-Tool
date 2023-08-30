@@ -101,21 +101,21 @@ class MainWindow(QMainWindow):
                 if not sender == self.UI.ThemeLight:
                     self.db.update_theme(theme='dark')
                     QApplication.exit(0)
-                    subprocess.Popen([sys.executable] + sys.argv)
+                    subprocess.Popen(['spt.exe'] + sys.argv)
                 else:
                     pass
             else:
                 if not sender == self.UI.ThemeDark:
                     self.db.update_theme(theme='light')
                     QApplication.exit(0)
-                    subprocess.Popen([sys.executable] + sys.argv)
+                    subprocess.Popen(['spt.exe'] + sys.argv)
                 else:
                     pass
         else:
             if not sender == self.UI.ThemeLight:
                 self.db.add_theme(theme='dark')
                 QApplication.exit(0)
-                subprocess.Popen([sys.executable] + sys.argv)
+                subprocess.Popen(['spt.exe'] + sys.argv)
             else:
                 self.db.add_theme(theme='light')
 

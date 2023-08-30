@@ -1,3 +1,9 @@
+# 0.12.2
+*2023-08-29*
+
+### Added Windows 11 support and fixed some bugs in main script and installator.
+
+
 # 0.12.1
 *2023-08-21*
 

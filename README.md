@@ -14,16 +14,20 @@
 
 ### Themes:
 #### macOS
-<img src="READMEimages/menu1.png" width="30%">
-<img src="READMEimages/menu2.png" width="30%">
+<img src="READMEimages/menu1-macos.png" width="30%">
+<img src="READMEimages/menu2-macos.png" width="30%">
 
-#### Windows
-<img src="READMEimages/menu3.png" width="30%">
-<img src="READMEimages/menu4.png" width="30%">
+#### Windows 11
+<img src="READMEimages/menu1-win11.png" width="30%">
+<img src="READMEimages/menu2-win11.png" width="30%">
 
-#### Linux
-<img src="READMEimages/menu5.png" width="30%">
-<img src="READMEimages/menu6.png" width="30%">
+#### Windows 10
+<img src="READMEimages/menu1-win10.png" width="30%">
+<img src="READMEimages/menu2-win10.png" width="30%">
+
+#### Kali Linux
+<img src="READMEimages/menu1-linux.png" width="30%">
+<img src="READMEimages/menu2-linux.png" width="30%">
 
 ### Parsing:
 <img src="READMEimages/parser1.png" width="30%">
@@ -44,7 +48,7 @@ This "vulnerability" can show this screenshots, so SPT generates unique links to
 
 
 ## Installation
-### Linux/macOS
+### macOS/Linux
 #### Manual installation
 1. Download [install.sh](https://github.com/codelao/Screenshots-Parse-Tool/releases) script from the latest release.
 2. Open terminal in the directory with downloaded script and run the following command:
@@ -67,7 +71,7 @@ wget https://github.com/codelao/Screenshots-Parse-Tool/raw/main/install.sh && ba
 spt
 ```
 
-### Windows
+### Windows 10, 11
 #### Manual installation
 1. Download [install.bat](https://github.com/codelao/Screenshots-Parse-Tool/releases) script from the latest release.
 2. Open cmd in the directory with downloaded script and run the following command:
@@ -78,6 +82,7 @@ install
 ```
 spt
 ```
+*Note:* you might face popular Windows error while running the program for the first time. You can easily fix it using the command listed [here](#installation-errors).
 
 #### Easy installation
 *This method requires 'wget' to be installed in your system first.*
@@ -89,6 +94,7 @@ wget https://github.com/codelao/Screenshots-Parse-Tool/raw/main/install.bat && i
 ```
 spt
 ```
+*Note:* you might face popular Windows error while running the program for the first time. You can easily fix it using the command listed [here](#installation-errors).
 
 
 ## Uninstallation
@@ -115,6 +121,10 @@ setx PATH "%PATH%;\your\path\here"
 - Program crashes after clicking on ***Launch*** button
 
 **This errors may occure not only because you don't have internet connection, but also because your internet is too slow.**
+
+- Conflict between **PyQt5** and **PyQt6**
+
+**If program doesn't work because you have PyQt5 installed in your system, you should fully uninstall it before running the program next time.**
 
 ### System errors:
 - Nothing happens or an error occurs after running SPT
