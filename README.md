@@ -49,6 +49,7 @@ This "vulnerability" can show this screenshots, so SPT generates unique links to
 
 ## Installation
 ### macOS/Linux
+*Note:* you need to have Python3 and Git installed in your system before moving to the program installation steps.
 #### Manual installation
 1. Download [install.sh](https://github.com/codelao/Screenshots-Parse-Tool/releases) script from the latest release.
 2. Open terminal in the directory with downloaded script and run the following command:
@@ -72,6 +73,7 @@ spt
 ```
 
 ### Windows 10, 11
+*Note:* you need to have Python3 and Git installed in your system before moving to the program installation steps.
 #### Manual installation
 1. Download [install.bat](https://github.com/codelao/Screenshots-Parse-Tool/releases) script from the latest release.
 2. Open cmd in the directory with downloaded script and run the following command:
