@@ -1,3 +1,9 @@
+# 0.12.3
+*2023-11-01*
+
+### Added fake user agent for requests
+
+
 # 0.12.2
 *2023-08-29*
 
