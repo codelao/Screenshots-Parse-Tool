@@ -4,6 +4,7 @@ import string
 import datetime
 import requests
 from lxml import etree
+from fake_useragent import UserAgent
 
 
 def path_generator():
@@ -15,7 +16,7 @@ def path_generator():
         return random_path
 
 def parser(path):
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246'}
+    headers = {'User-Agent':str(UserAgent().random)}
     link = 'https://prnt.sc/' + path
     get_link = requests.get(link, headers=headers).text
     parser = etree.HTMLParser()
@@ -27,7 +28,7 @@ def downloader():
     path = path_generator()
     screenshot_link = parser(path)
     if not screenshot_link[0] == '/':
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246'}
+        headers = {'User-Agent':str(UserAgent().random)}
         get_screenshot_link = requests.get(screenshot_link, headers=headers)
         if not get_screenshot_link.status_code == 404:
             desktop_path = os.path.join(os.path.expanduser('~'), 'Desktop')
