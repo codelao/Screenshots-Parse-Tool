@@ -1,3 +1,9 @@
+# 0.12.5
+*2023-12-14*
+
+### Added latest release check after the app start
+
+
 # 0.12.3
 *2023-11-01*
 

@@ -21,4 +21,4 @@ import os
 
 PATH = os.path.dirname(__file__)
 NAME = 'Screenshots-Parse-Tool'
-VERSION = '0.12.1'
+VERSION = '0.12.5'

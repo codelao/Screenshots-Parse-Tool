@@ -1,14 +1,11 @@
-import sys
-import subprocess
-import webbrowser
-import setproctitle
+import sys, subprocess, webbrowser, setproctitle
 from ScreenshotsParseTool import NAME, VERSION, PATH
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt6.QtGui import QFontDatabase, QPixmap
 from .startparser import StartParserWindow
 from .ui_menu import Ui_MainWindow
 from .dbase import Database
-from .check_internet import check_internet_connection
+from .checks import check_internet_connection, check_latest_release
 
 
 class MainWindow(QMainWindow):
@@ -27,6 +24,8 @@ class MainWindow(QMainWindow):
             'background-color: #330230;\n'
             '}')
         QFontDatabase.addApplicationFont(PATH + '/fonts/Rubik.ttf')
+        if not check_latest_release() == None:
+            self.release(latest=check_latest_release())
         self.connections()
 
     def connections(self):
@@ -139,8 +138,27 @@ class MainWindow(QMainWindow):
             if self.db.check_terms() == None:
                 self.db.add_terms(terms='agree')
 
+    def release(self, latest):
+        self.release_popup = QMessageBox(self)
+        self.release_popup.setWindowTitle('New release notice')
+        self.release_popup.setIconPixmap(QPixmap(PATH + '/images/logo.png'))
+        self.release_popup.setStyleSheet('QMessageBox {\n'
+                                        'background-color: #FFFFFF;\n'
+                                        'color: #000000;\n'
+                                        '}')
+        self.release_popup.move(400, 300)
+        self.release_popup.setIcon(QMessageBox.Icon.Warning)
+        self.release_popup.setText('New SPT release found!')
+        self.release_popup.setDetailedText('Installed release: v'+VERSION+'\nLatest: '+latest)
+        self.installButton = self.release_popup.addButton('Install', QMessageBox.ButtonRole.ApplyRole)
+        self.laterButton = self.release_popup.addButton('Later', QMessageBox.ButtonRole.RejectRole)
+        self.release_popup.setDefaultButton(self.installButton)
+        self.release_popup.exec()
+        if self.release_popup.clickedButton() == self.installButton:
+            webbrowser.open('https://github.com/codelao/Screenshots-Parse-Tool/releases/latest')
 
-def entry_point():
+
+def entry_point():        
     app = QApplication(sys.argv)
     app.setApplicationName(NAME)
     app.setApplicationVersion(VERSION)
