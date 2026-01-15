@@ -7,11 +7,11 @@
 </h1>
 
 * [Usage](#usage)
-* [Disclaimer](#disclaimer!)
+  * [Disclaimer](#disclaimer)
+  * [Important notice](#important-notice-for-all-users-of-spt)
 * [Installation](#installation)
 * [Uninstallation](#uninstallation)
 * [Popular errors](#popular-errors)
-* [Important notice](#important-notice)
 
 
 ### Themes:
@@ -46,7 +46,7 @@
 SPT (Screenshots Parse Tool) "exploits" the «Lightshot» app's option of saving screenshots to the public cloud. This app is pretty popular and that's why it has over 4 billion public screenshots saved by users on purpose or by accident.
 SPT generates unique links to this screenshots, parses them and after saves them to the auto-created directory on your Desktop. You can see how it looks [here](#directories). 
 
-#### Disclaimer! 
+### Disclaimer! 
 **This application does NOT exploit any real vulnerabilities which lead to unathorized access to private materials of other users in the internet. All information that could be possibly obtained through this application is publicly available. Author is not responsible for any attempts of using it for malicious purposes.**
 
 ### Important notice for all users of SPT
