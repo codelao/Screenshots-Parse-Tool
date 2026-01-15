@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="READMEimages/banner.png" width="75%">
+  <img src="https://i.imgur.com/L3TYF0n.png" width="75%">
 </p>
 
 <h1 align="center">
@@ -7,44 +7,52 @@
 </h1>
 
 * [Usage](#usage)
+* [Disclaimer](#disclaimer!)
 * [Installation](#installation)
 * [Uninstallation](#uninstallation)
 * [Popular errors](#popular-errors)
+* [Important notice](#important-notice)
 
 
 ### Themes:
 #### macOS
-<img src="READMEimages/menu1-macos.png" width="30%">
-<img src="READMEimages/menu2-macos.png" width="30%">
+<p style="white-space: nowrap;">
+ <img src="https://i.imgur.com/xuX7zhk.png" width="30%">
+ <img src="https://i.imgur.com/fa1fx77.png" width="30%">
+</p>
 
-#### Windows 11
-<img src="READMEimages/menu1-win11.png" width="30%">
-<img src="READMEimages/menu2-win11.png" width="30%">
+#### Windows
+<p style="white-space: nowrap;">
+ <img src="https://i.imgur.com/RiLIt8V.png" width="30%">
+ <img src="https://i.imgur.com/TnIQIIh.png" width="30%">
+</p>
 
-#### Windows 10
-<img src="READMEimages/menu1-win10.png" width="30%">
-<img src="READMEimages/menu2-win10.png" width="30%">
-
-#### Kali Linux
-<img src="READMEimages/menu1-linux.png" width="30%">
-<img src="READMEimages/menu2-linux.png" width="30%">
+#### Linux
+<p style="white-space: nowrap;">
+ <img src="https://i.imgur.com/WwQN824.png" width="30%">
+ <img src="https://i.imgur.com/0YHHAV1.png" width="30%">
+</p>
 
 ### Parsing:
-<img src="READMEimages/parser1.png" width="30%">
-<img src="READMEimages/parser2.png" width="30%">
-<img src="READMEimages/parser3.png" width="30%">
-<img src="READMEimages/parser4.png" width="30%">
+<img src="https://i.imgur.com/8y94Cui.png" width="40%"></br>
+<img src="https://i.imgur.com/EogpkyV.png" width="40%"></br>
+<img src="https://i.imgur.com/p0LkeAo.png" width="40%">
 
-### Auto-created directories:
-<img src="READMEimages/dirs.png" width="60%">
+### Output folders:
+<img src="https://i.imgur.com/gvsGjgz.png" width="60%">
 
 
 ## Usage
-SPT (Screenshots Parse Tool) exploits the "vulnerability" in the app, called "Lightshot" which is made for taking screenshots. This app is pretty popular and that's why it has over 4 billion stranger's screenshots saved.
-This "vulnerability" can show this screenshots, so SPT generates unique links to this screenshots, parses them and after saves them to the auto-created directory on your Desktop. You can see how it looks [here](#directories). 
+SPT (Screenshots Parse Tool) "exploits" the «Lightshot» app's option of saving screenshots to the public cloud. This app is pretty popular and that's why it has over 4 billion public screenshots saved by users on purpose or by accident.
+SPT generates unique links to this screenshots, parses them and after saves them to the auto-created directory on your Desktop. You can see how it looks [here](#directories). 
 
-#### Important! 
-**"Lightshot" developers added the function of accessing to other user's screenshots on their website themselves, so SPT doesn't exploit any prohibited vulnerabilities.**
+#### Disclaimer! 
+**This application does NOT exploit any real vulnerabilities which lead to unathorized access to private materials of other users in the internet. All information that could be possibly obtained through this application is publicly available. Author is not responsible for any attempts of using it for malicious purposes.**
+
+### Important notice for all users of SPT
+Please note that only you are responsible for any actions made within this tool.
+
+Also, be aware that some people can use the feature of this tool in order to deceive the users by posting fake enticing screenshots, for example, containing login data to some unknown and unsafe website. Avoid getting caught in your own web.
 
 
 ## Installation
@@ -138,5 +146,5 @@ setx PATH "%PATH%;\your\path\here"
 
 **This error may occure because your internet connection is too slow.**
 
-#### Important!
+#### Note:
 **Connecting your computer to the mobile internet can also cause problems with the program.**
