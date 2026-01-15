@@ -52,7 +52,7 @@ SPT generates unique links to this screenshots, parses them and after saves them
 ### Important notice for all users of SPT
 Please note that only you are responsible for any actions made within this tool.
 
-Also, be aware that some people can use the feature of this tool in order to deceive the users by posting fake enticing screenshots, for example, containing login data to some unknown and unsafe website. Avoid getting caught in your own web.
+Also, be aware that some people can use the feature of this tool in order to deceive users by posting fake enticing screenshots, for example, containing login data to some unknown and unsafe website. Avoid getting caught in your own web.
 
 
 ## Installation
