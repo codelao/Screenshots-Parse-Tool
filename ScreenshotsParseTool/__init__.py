@@ -19,6 +19,6 @@
 import os 
 
 
-PATH = os.path.dirname(__file__)
-NAME = 'Screenshots-Parse-Tool'
-VERSION = '0.12.5'
+__path__ = os.path.dirname(__file__)
+__name__ = 'Screenshots-Parse-Tool'
+__version__ = '0.12.6'

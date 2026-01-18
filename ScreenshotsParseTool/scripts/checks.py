@@ -1,5 +1,5 @@
 import requests, json
-from ScreenshotsParseTool import VERSION
+from ScreenshotsParseTool import __version__
 
 
 def check_internet_connection():
@@ -14,5 +14,5 @@ def check_latest_release():
     check_latest_release = requests.get('https://api.github.com/repos/codelao/Screenshots-Parse-Tool/releases/latest', headers=headers)
     if check_latest_release.status_code == 200:
         latest_release = json.loads(check_latest_release.text)
-        if not latest_release['tag_name'] == 'v'+VERSION:
+        if not latest_release['tag_name'] == 'v'+__version__:
             return latest_release['tag_name']

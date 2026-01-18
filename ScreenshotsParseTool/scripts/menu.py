@@ -1,5 +1,26 @@
+#!/usr/bin/env python3
+
+#       #######        ##### ##      /###           / 
+#     /       ###   ######  /###    /  ############/  
+#    /         ##  /#   /  /  ###  /     #########    
+#    ##        #  /    /  /    ### #     /  #         
+#     ###             /  /      ##  ##  /  ##         
+#    ## ###          ## ##      ##     /  ###         
+#     ### ###        ## ##      ##    ##   ##         
+#       ### ###    /### ##      /     ##   ##         
+#         ### /## / ### ##     /      ##   ##         
+#           #/ /##   ## ######/       ##   ##         
+#            #/ ##   ## ######         ##  ##         
+#             # /    ## ##              ## #      /   
+#   /##        /     ## ##               ###     /    
+#  /  ########/      ## #/                ######/     
+# /     #####        ## /                   ###  
+#                      by Lao
+#                Licensed under MIT
+
+
 import sys, subprocess, webbrowser, setproctitle
-from ScreenshotsParseTool import NAME, VERSION, PATH
+from ScreenshotsParseTool import __name__, __version__, __path__
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt6.QtGui import QFontDatabase, QPixmap
 from .startparser import StartParserWindow
@@ -11,7 +32,7 @@ from .checks import check_internet_connection, check_latest_release
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        self.db = Database(PATH + '/database/spt_db.db')
+        self.db = Database(__path__ + '/database/spt_db.db')
         self.theme = self.db.check_theme()
         self.UI = Ui_MainWindow()
         self.UI.setupUi(self)
@@ -23,7 +44,7 @@ class MainWindow(QMainWindow):
             self.setStyleSheet('QMainWindow {\n'
             'background-color: #330230;\n'
             '}')
-        QFontDatabase.addApplicationFont(PATH + '/fonts/Rubik.ttf')
+        QFontDatabase.addApplicationFont(__path__ + '/fonts/Rubik.ttf')
         if not check_latest_release() == None:
             self.release(latest=check_latest_release())
         self.connections()
@@ -44,7 +65,7 @@ class MainWindow(QMainWindow):
             else:
                 self.internet_error_popup = QMessageBox(self)
                 self.internet_error_popup.setWindowTitle('Internet error')
-                self.internet_error_popup.setIconPixmap(QPixmap(PATH + '/images/logo.png'))
+                self.internet_error_popup.setIconPixmap(QPixmap(__path__ + '/images/logo.png'))
                 self.internet_error_popup.setStyleSheet('QMessageBox {\n'
                                                         'background-color: #FFFFFF;\n'
                                                         'color: #000000;\n'
@@ -64,7 +85,7 @@ class MainWindow(QMainWindow):
         if not self.count == None:
             self.stats_popup = QMessageBox(self)
             self.stats_popup.setWindowTitle('Statistics')
-            self.stats_popup.setIconPixmap(QPixmap(PATH + '/images/logo.png'))
+            self.stats_popup.setIconPixmap(QPixmap(__path__ + '/images/logo.png'))
             self.stats_popup.setStyleSheet('QMessageBox {\n'
                                             'background-color: #FFFFFF;\n'
                                             'color: #000000;\n'
@@ -78,7 +99,7 @@ class MainWindow(QMainWindow):
         else:
             self.stats_popup = QMessageBox(self)
             self.stats_popup.setWindowTitle('Statistics')
-            self.stats_popup.setIconPixmap(QPixmap(PATH + '/images/logo.png'))
+            self.stats_popup.setIconPixmap(QPixmap(__path__ + '/images/logo.png'))
             self.stats_popup.setStyleSheet('QMessageBox {\n'
                                             'background-color: #FFFFFF;\n'
                                             'color: #000000;\n'
@@ -121,7 +142,7 @@ class MainWindow(QMainWindow):
     def terms(self):
         self.terms_popup = QMessageBox(self)
         self.terms_popup.setWindowTitle('Terms of Use')
-        self.terms_popup.setIconPixmap(QPixmap(PATH + '/images/logo.png'))
+        self.terms_popup.setIconPixmap(QPixmap(__path__ + '/images/logo.png'))
         self.terms_popup.setStyleSheet('QMessageBox {\n'
                                         'background-color: #FFFFFF;\n'
                                         'color: #000000;\n'
@@ -141,7 +162,7 @@ class MainWindow(QMainWindow):
     def release(self, latest):
         self.release_popup = QMessageBox(self)
         self.release_popup.setWindowTitle('New release notice')
-        self.release_popup.setIconPixmap(QPixmap(PATH + '/images/logo.png'))
+        self.release_popup.setIconPixmap(QPixmap(__path__ + '/images/logo.png'))
         self.release_popup.setStyleSheet('QMessageBox {\n'
                                         'background-color: #FFFFFF;\n'
                                         'color: #000000;\n'
@@ -149,7 +170,7 @@ class MainWindow(QMainWindow):
         self.release_popup.move(400, 300)
         self.release_popup.setIcon(QMessageBox.Icon.Warning)
         self.release_popup.setText('New SPT release found!')
-        self.release_popup.setDetailedText('Installed release: v'+VERSION+'\nLatest: '+latest)
+        self.release_popup.setDetailedText('Installed release: v'+__version__+'\nLatest: '+latest)
         self.installButton = self.release_popup.addButton('Install', QMessageBox.ButtonRole.ApplyRole)
         self.laterButton = self.release_popup.addButton('Later', QMessageBox.ButtonRole.RejectRole)
         self.release_popup.setDefaultButton(self.installButton)
@@ -160,12 +181,13 @@ class MainWindow(QMainWindow):
 
 def entry_point():        
     app = QApplication(sys.argv)
-    app.setApplicationName(NAME)
-    app.setApplicationVersion(VERSION)
-    setproctitle.setproctitle(NAME)
+    app.setApplicationName(__name__)
+    app.setApplicationVersion(__version__)
+    setproctitle.setproctitle(__name__)
     mw = MainWindow()
     mw.show()
     sys.exit(app.exec())
+
 
 if __name__ == '__main__':
     entry_point()

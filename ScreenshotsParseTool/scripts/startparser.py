@@ -1,5 +1,5 @@
 import datetime
-from ScreenshotsParseTool import PATH
+from ScreenshotsParseTool import __path__
 from PyQt6.QtWidgets import QDialog, QApplication, QMessageBox
 from PyQt6.QtGui import QPixmap, QFontDatabase
 from .dbase import Database
@@ -10,7 +10,7 @@ from .get_screenshot import downloader
 class StartParserWindow(QDialog):
     def __init__(self, parent):
         super(StartParserWindow, self).__init__()
-        self.db = Database(PATH + '/database/spt_db.db')
+        self.db = Database(__path__ + '/database/spt_db.db')
         self.theme = self.db.check_theme()
         self.UI = Ui_Dialog()
         self.UI.setupUi(self)
@@ -22,7 +22,7 @@ class StartParserWindow(QDialog):
             self.setStyleSheet('QDialog {\n'
             'background-color: #330230;\n'
             '}')
-        QFontDatabase.addApplicationFont(PATH + '/fonts/Rubik.ttf')
+        QFontDatabase.addApplicationFont(__path__ + '/fonts/Rubik.ttf')
         self.connections()
         self.parent = parent
 
@@ -43,7 +43,7 @@ class StartParserWindow(QDialog):
             QApplication.processEvents()
         self.finish_popup = QMessageBox(self)
         self.finish_popup.setWindowTitle('Parsing finished')
-        self.finish_popup.setIconPixmap(QPixmap(PATH + '/images/logo.png'))
+        self.finish_popup.setIconPixmap(QPixmap(__path__ + '/images/logo.png'))
         self.finish_popup.setStyleSheet('QMessageBox {\n'
                                         'background-color: #FFFFFF;\n'
                                         'color: #000000;\n'

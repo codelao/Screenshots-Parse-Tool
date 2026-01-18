@@ -1,4 +1,4 @@
-from ScreenshotsParseTool import PATH
+from ScreenshotsParseTool import __path__
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
@@ -10,7 +10,7 @@ class Ui_Dialog(object):
         font.setFamily("Rubik")
         Dialog.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(PATH + "/images/logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(__path__ + "/images/logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         Dialog.setWindowIcon(icon)
         Dialog.setStyleSheet("")
         self.verticalLayoutWidget = QtWidgets.QWidget(parent=Dialog)
